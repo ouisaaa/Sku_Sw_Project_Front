@@ -1,6 +1,7 @@
 import './App.css';
 
 import Main from './component/Main';
+import Test from './component/Test';
 
 import Login from'./component/Login';
 import SignUp from './component/SignUp';
@@ -8,13 +9,15 @@ import Seller from './component/Seller';
 import ProductDetail from './component/ProductDetail';
 import Order from './component/Order';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-import {HashRouter,Route,Routes,Navigate} from 'react-router-dom';
+import {BrowserRouter,Route,Routes} from 'react-router-dom';
+
 function App() {
   return (
-   <HashRouter>
+   <BrowserRouter>
     <Routes>
-      <Route exact path='/'element={<Navigate to="/main/all"/>}></Route>
+      {/* <Route path='/'element={<Test/>}></Route> */}
       <Route path='/main/:category'element={<Main/>}>
       </Route>
       <Route path='/login'element={<Login/>}>
@@ -30,7 +33,7 @@ function App() {
       <Route path='/Order/:p_code'state='{ product: productBuy }'element={<Order/>}>
       </Route>
     </Routes>
-   </HashRouter>
+   </BrowserRouter>
   );
 }
 
